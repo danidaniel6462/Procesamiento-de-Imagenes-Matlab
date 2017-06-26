@@ -1,0 +1,17 @@
+%w = 1/9*[1 1 1;1 1 1;1 1 1];
+%w = [-1 -1 -1;-1 8 -1;-1 -1 -1];
+
+
+function IM = traslacion(x,y,I)
+[f,c] = size(I); 
+IM=I; 
+    for i=1:f 
+     for j=1:c 
+        IM(i,j) = 0
+        if(i-y>0 & j-x>0 & i-y<f & j-x<c)
+            IM(i,j) = I(i-y,j-x);
+        end
+     end 
+    end
+end
+
